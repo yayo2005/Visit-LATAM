@@ -1,0 +1,118 @@
+<!-- Sección Organiza tu viaje -->
+<section id="organiza-viaje" class="py-10 sm:py-16 px-4 sm:px-6 bg-gray-100">
+    <div class="max-w-6xl mx-auto">
+        <div class="flex flex-col lg:flex-row min-h-0 lg:min-h-[600px] overflow-hidden rounded-xl sm:rounded-2xl shadow-xl">
+            <!-- Columna izquierda: Formulario (60%) -->
+            <div class="w-full lg:w-[60%] bg-[#8B4513] p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-center order-2 lg:order-1">
+                <h2 class="text-3xl md:text-4xl font-bold uppercase text-white mb-8 md:mb-10" style="font-family: 'Inter', sans-serif;">
+                    Organiza tu viaje
+                </h2>
+                <form id="form-viaje" class="space-y-5">
+                    <!-- Fila: Nombre y Apellido lado a lado -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <input 
+                                type="text" 
+                                id="nombre" 
+                                name="nombre" 
+                                placeholder="Nombre" 
+                                required
+                                class="w-full px-4 py-3 rounded-lg bg-[#F5E6D3] text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-300 focus:bg-white transition-all"
+                            />
+                        </div>
+                        <div>
+                            <input 
+                                type="text" 
+                                id="apellido" 
+                                name="apellido" 
+                                placeholder="Apellido" 
+                                required
+                                class="w-full px-4 py-3 rounded-lg bg-[#F5E6D3] text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-300 focus:bg-white transition-all"
+                            />
+                        </div>
+                    </div>
+                    
+                    <!-- Campo: Correo electrónico -->
+                    <div>
+                        <input 
+                            type="email" 
+                            id="correo" 
+                            name="correo" 
+                            placeholder="Correo electrónico" 
+                            required
+                            class="w-full px-4 py-3 rounded-lg bg-[#F5E6D3] text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-300 focus:bg-white transition-all"
+                        />
+                    </div>
+                    
+                    <!-- Campo: Teléfono -->
+                    <div>
+                        <input 
+                            type="tel" 
+                            id="telefono" 
+                            name="telefono" 
+                            placeholder="Teléfono" 
+                            required
+                            class="w-full px-4 py-3 rounded-lg bg-[#F5E6D3] text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-300 focus:bg-white transition-all"
+                        />
+                    </div>
+                    
+                    <!-- Campo: Lugar de destino -->
+                    <div>
+                        <input 
+                            type="text" 
+                            id="destino" 
+                            name="destino" 
+                            placeholder="Lugar de destino" 
+                            required
+                            class="w-full px-4 py-3 rounded-lg bg-[#F5E6D3] text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-300 focus:bg-white transition-all"
+                        />
+                    </div>
+                    
+                    <!-- Botón Enviar -->
+                    <div class="pt-2">
+                        <button 
+                            type="submit" 
+                            class="w-full md:w-auto px-8 py-3 bg-white text-[#8B4513] font-bold uppercase rounded-lg hover:bg-orange-50 focus:outline-none focus:ring-2 focus:ring-orange-300 transition-all shadow-lg"
+                        >
+                            Enviar
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Columna derecha: Imagen del avión (40%) -->
+            <div class="w-full lg:w-[40%] relative overflow-hidden min-h-[260px] sm:min-h-[320px] lg:min-h-0 order-1 lg:order-2">
+                <img 
+                    src="fotos/avion.jpg" 
+                    alt="Vista desde ventana de avión - cielo azul y nubes" 
+                    class="w-full h-full min-h-[260px] sm:min-h-[320px] lg:min-h-0 object-cover"
+                />
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Manejar envío del formulario
+    document.getElementById('form-viaje')?.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Aquí puedes agregar la lógica para enviar los datos
+        // Por ejemplo, a un servidor, email, etc.
+        const formData = {
+            nombre: document.getElementById('nombre').value,
+            apellido: document.getElementById('apellido').value,
+            correo: document.getElementById('correo').value,
+            telefono: document.getElementById('telefono').value,
+            destino: document.getElementById('destino').value
+        };
+        
+        console.log('Datos del formulario:', formData);
+        
+        // Mensaje de confirmación (puedes personalizarlo)
+        alert('¡Gracias! Hemos recibido tu solicitud. Nos pondremos en contacto contigo pronto.');
+        
+        // Opcional: limpiar el formulario
+        this.reset();
+    });
+</script>

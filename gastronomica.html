@@ -1,0 +1,264 @@
+<!-- ===== RUTA GASTRONÓMICA ===== -->
+
+<style>
+  .gastronomica * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .gastronomica {
+    font-family: 'Inter', sans-serif;
+    background: #f2f2f2;
+  }
+
+  .gastronomica .carousel {
+    position: relative;
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 16px;
+    border-radius: 12px;
+  }
+
+  @media (min-width: 640px) {
+    .gastronomica .carousel {
+      margin: 50px auto;
+      padding: 0 24px;
+      border-radius: 18px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .gastronomica .carousel {
+      margin: 60px auto;
+      padding: 0;
+    }
+  }
+
+  .gastronomica .slides {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+    width: 300%;
+  }
+
+  .gastronomica .slide {
+    width: 100%;
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+    padding: 24px;
+    color: #fff;
+  }
+
+  @media (min-width: 640px) {
+    .gastronomica .slide {
+      min-height: 400px;
+      padding: 36px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .gastronomica .slide {
+      min-height: 420px;
+      padding: 50px;
+    }
+  }
+
+  .gastronomica .slide-content {
+    display: flex;
+    width: 100%;
+    gap: 24px;
+    align-items: center;
+  }
+
+  @media (min-width: 1024px) {
+    .gastronomica .slide-content {
+      gap: 40px;
+    }
+  }
+
+  .gastronomica .text {
+    width: 45%;
+  }
+
+  .gastronomica .text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+
+  @media (min-width: 640px) {
+    .gastronomica .text h2 {
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .gastronomica .text h2 {
+      font-size: 32px;
+      margin-bottom: 25px;
+    }
+  }
+
+  .gastronomica .location {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  @media (min-width: 640px) {
+    .gastronomica .location {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .gastronomica .location {
+      font-size: 24px;
+    }
+  }
+
+  .gastronomica .text p {
+    font-size: 14px;
+    line-height: 1.6;
+    opacity: 0.95;
+  }
+
+  @media (min-width: 640px) {
+    .gastronomica .text p {
+      font-size: 15px;
+    }
+  }
+
+  .gastronomica .image {
+    width: 55%;
+  }
+
+  .gastronomica .image img {
+    width: 100%;
+    border-radius: 16px;
+    object-fit: cover;
+  }
+
+  .gastronomica .lima {
+    background: linear-gradient(135deg, #0b1d3a, #132f5e);
+  }
+
+  .gastronomica .oaxaca {
+    background: #b9d28c;
+    color: #1f2a1f;
+  }
+
+  .gastronomica .oaxaca .text p,
+  .gastronomica .oaxaca .location {
+    color: #1f2a1f;
+  }
+
+  .gastronomica .buenos-aires {
+    background: #a54f13;
+  }
+
+  .gastronomica .controls {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    display: flex;
+    gap: 10px;
+  }
+
+  .gastronomica .controls button {
+    background: rgba(255,255,255,0.8);
+    border: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .gastronomica .controls button.active {
+    background: #fff;
+    transform: scale(1.3);
+  }
+
+  @media (max-width: 900px) {
+    .gastronomica .slide-content {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .gastronomica .text,
+    .gastronomica .image {
+      width: 100%;
+    }
+
+    .gastronomica .text h2 {
+      font-size: 22px;
+    }
+
+    @media (min-width: 640px) {
+      .gastronomica .text h2 {
+        font-size: 26px;
+      }
+    }
+  }
+</style>
+
+<section class="gastronomica">
+  <div class="carousel">
+    <div class="slides" id="gastronomica-slides">
+
+      <div class="slide lima">
+        <div class="slide-content">
+          <div class="text">
+            <h2>Latinoamérica, una región llena de sabores</h2>
+            <div class="location">📍 LIMA, PERÚ</div>
+            <p>
+              Lima es fuego, mar y memoria servidos en un plato.
+              Comer aquí no es un gusto: es un ritual.
+            </p>
+          </div>
+          <div class="image">
+            <img src="fotos/ceviche.jpg" alt="Gastronomía de Lima">
+          </div>
+        </div>
+      </div>
+
+      <div class="slide oaxaca">
+        <div class="slide-content">
+          <div class="text">
+            <h2>Latinoamérica, una región llena de sabores</h2>
+            <div class="location">📍 OAXACA, MÉXICO</div>
+            <p>
+              Oaxaca es maíz, humo y paciencia.
+              Aquí la cocina no es moda: es raíz.
+            </p>
+          </div>
+          <div class="image">
+            <img src="img/tlayuda.jpg" alt="Gastronomía de Oaxaca">
+          </div>
+        </div>
+      </div>
+
+      <div class="slide buenos-aires">
+        <div class="slide-content">
+          <div class="text">
+            <h2>Latinoamérica, una región llena de sabores</h2>
+            <div class="location">📍 BUENOS AIRES, ARGENTINA</div>
+            <p>
+              Asado, pan y sobremesa.
+              Comer es una forma de quedarse.
+            </p>
+          </div>
+          <div class="image">
+            <img src="fotos/asado.jpg" alt="Gastronomía de Buenos Aires">
+          </div>
+        </div>
+      </div>
+
+    </di

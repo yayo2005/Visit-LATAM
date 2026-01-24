@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>Visit LATAM</title>
+    <style>
+        .carousel-slide {
+            flex: 0 0 100%;
+        }
+        
+        .visit-latam-text {
+            font-family: 'Inter', sans-serif;
+            font-weight: 900;
+            font-size: clamp(2rem, 8vw, 5rem);
+            letter-spacing: -0.02em;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
+        .nav-bar {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .location-pin {
+            width: 20px;
+            height: 24px;
+            fill: #ffa366;
+        }
+
+        .flag-img {
+            height: 1.25rem;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .font-serif {
+            font-family: 'Playfair Display', 'Merriweather', serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Barra de navegación-->
+    <nav class="nav-bar rounded-b-lg px-3 sm:px-6 py-3 sm:py-4 mb-0 flex flex-wrap items-center justify-center gap-2 sm:gap-4 relative z-50">
+        <a href="#" class="text-orange-800 hover:text-orange-900 shrink-0" aria-label="Inicio">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
+            </svg>
+        </a>
+        <a href="#destinos" id="nav-link-destinos" class="nav-link text-orange-800 hover:text-orange-900 font-medium text-sm sm:text-base px-3 sm:px-4 py-2 rounded transition-all">Destinos</a>
+        <div class="hidden sm:block w-px h-5 bg-orange-600"></div>
+        <a href="#gastronomica" class="text-orange-800 hover:text-orange-900 font-medium text-sm sm:text-base px-3 sm:px-4 py-2 rounded transition-all">Ruta gastronómica</a>
+        <div class="hidden sm:block w-px h-5 bg-orange-600"></div>
+        <a href="#organiza-viaje" id="nav-link-organiza-viaje" class="nav-link text-orange-800 hover:text-orange-900 font-medium text-sm sm:text-base px-3 sm:px-4 py-2 rounded transition-all">Organiza tu viaje</a>
+        <div class="hidden sm:block w-px h-5 bg-orange-600"></div>
+        <a href="#contactanos" id="nav-link-contactanos" class="nav-link text-orange-800 hover:text-orange-900 font-medium text-sm sm:text-base px-3 sm:px-4 py-2 rounded transition-all">Contáctanos</a>
+    </nav>
+
+    <div id="carousel" class="relative w-full overflow-hidden">
+        <!-- Contenedor del carrusel -->
+        <div id="track" class="flex transition-transform duration-700 ease-in-out">
+            <!-- Slide 1 - Río de Janeiro -->
+            <section class="carousel-slide min-w-full h-[380px] sm:h-[480px] lg:h-[600px] bg-cover bg-center flex flex-col justify-end p-6 sm:p-8 lg:p-10 relative"
+                style="background-image: url('fotos/rio.jpg')">
+                <div class="text-white space-y-2 sm:space-y-4">
+                    <div class="flex items-center gap-2 mb-2">
+                        <svg class="location-pin shrink-0 w-4 h-5 sm:w-5 sm:h-6" viewBox="0 0 24 24">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                        <span class="text-base sm:text-xl font-bold">Rio de janeiro</span>
+                        <img src="fotos/brasil.png" alt="Brasil" class="flag-img" />
+                    </div>
+                    <h1 class="visit-latam-text">Visit LATAM</h1>
+                </div>
+            </section>
+
+            <!-- Slide 2 - Patagonia -->
+            <section class="carousel-slide min-w-full h-[380px] sm:h-[480px] lg:h-[600px] bg-cover bg-center flex flex-col justify-end p-6 sm:p-8 lg:p-10 relative"
+                style="background-image: url('fotos/patagonia.jpg')">
+                <div class="text-white space-y-2 sm:space-y-4">
+                    <div class="flex items-center gap-2 mb-2">
+                        <svg class="location-pin shrink-0 w-4 h-5 sm:w-5 sm:h-6" viewBox="0 0 24 24">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                        <span class="text-base sm:text-xl font-bold">Patagonia</span>
+                        <img src="fotos/chile.png" alt="Chile" class="flag-img" />
+                        <img src="fotos/argentina.png" alt="Argentina" class="flag-img" />
+                    </div>
+                    <h1 class="visit-latam-text">Visit LATAM</h1>
+                </div>
+            </section>
+
+            <!-- Slide 3 - Riviera Maya -->
+            <section class="carousel-slide min-w-full h-[380px] sm:h-[480px] lg:h-[600px] bg-cover bg-center flex flex-col justify-end p-6 sm:p-8 lg:p-10 relative"
+                style="background-image: url('fotos/cancun.jpg')">
+                <div class="text-white space-y-2 sm:space-y-4">
+                    <div class="flex items-center gap-2 mb-2">
+                        <svg class="location-pin shrink-0 w-4 h-5 sm:w-5 sm:h-6" viewBox="0 0 24 24">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                        <span class="text-base sm:text-xl font-bold">Riviera Maya</span>
+                        <img src="fotos/mexico.png" alt="México" class="flag-img" />
+                    </div>
+                    <h1 class="visit-latam-text">Visit LATAM</h1>
+                </div>
+            </section>
+
+            <!-- Slide 4 - Panamá -->
+            <section class="carousel-slide min-w-full h-[380px] sm:h-[480px] lg:h-[600px] bg-cover bg-center flex flex-col justify-end p-6 sm:p-8 lg:p-10 relative"
+                style="background-image: url('fotos/panama.jpg')">
+                <div class="text-white space-y-2 sm:space-y-4">
+                    <div class="flex items-center gap-2 mb-2">
+                        <svg class="location-pin shrink-0 w-4 h-5 sm:w-5 sm:h-6" viewBox="0 0 24 24">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                        <span class="text-base sm:text-xl font-bold">Panamá</span>
+                        <img src="fotos/panama.png" alt="Panamá" class="flag-img" />
+                    </div>
+                    <h1 class="visit-latam-text">Visit LATAM</h1>
+                </div>
+            </section>
+
+            <!-- Slide 5 - Perú -->
+            <section class="carousel-slide min-w-full h-[380px] sm:h-[480px] lg:h-[600px] bg-cover bg-center flex flex-col justify-end p-6 sm:p-8 lg:p-10 relative"
+                style="background-image: url('fotos/peru.jpg')">
+                <div class="text-white space-y-2 sm:space-y-4">
+                    <div class="flex items-center gap-2 mb-2">
+                        <svg class="location-pin shrink-0 w-4 h-5 sm:w-5 sm:h-6" viewBox="0 0 24 24">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                        <span class="text-base sm:text-xl font-bold">Machu Pichu</span>
+                        <img src="fotos/peru.png" alt="Perú" class="flag-img" />
+                    </div>
+                    <h1 class="visit-latam-text">Visit LATAM</h1>
+                </div>
+            </section>
+
+            <!-- Slide 6 - Piedra del Peñol -->
+            <section class="carousel-slide min-w-full h-[380px] sm:h-[480px] lg:h-[600px] bg-cover bg-center flex flex-col justify-end p-6 sm:p-8 lg:p-10 relative"
+                style="background-image: url('fotos/piedra.jpg')">
+                <div class="text-white space-y-2 sm:space-y-4">
+                    <div class="flex items-center gap-2 mb-2">
+                        <svg class="location-pin shrink-0 w-4 h-5 sm:w-5 sm:h-6" viewBox="0 0 24 24">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                        <span class="text-base sm:text-xl font-bold">Piedra del Peñol</span>
+                        <img src="fotos/colombia.png" alt="Colombia" class="flag-img" />
+                    </div>
+                    <h1 class="visit-latam-text">Visit LATAM</h1>
+                </div>
+            </section>
+        </div>
+
+        <!-- Botones de navegación -->
+        <button id="prevBtn" class="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all z-10 touch-manipulation min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Anterior">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+        </button>
+
+        <button id="nextBtn" class="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all z-10 touch-manipulation min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Siguiente">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+        </button>
+
+        <!-- Indicadores -->
+        <div id="indicators" class="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-2 z-10">
+            <button class="indicator w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-white/50 hover:bg-white/80 transition-all active" aria-label="Slide 1"></button>
+            <button class="indicator w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-white/50 hover:bg-white/80 transition-all" aria-label="Slide 2"></button>
+            <button class="indicator w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-white/50 hover:bg-white/80 transition-all" aria-label="Slide 3"></button>
+            <button class="indicator w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-white/50 hover:bg-white/80 transition-all" aria-label="Slide 4"></button>
+            <button class="indicator w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-white/50 hover:bg-white/80 transition-all" aria-label="Slide 5"></button>
+            <button class="indicator w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-white/50 hover:bg-white/80 transition-all" aria-label="Slide 6"></button>
+        </div>
+    </div>
+
+    <!-- Contenedor para sección Destinos (se carga desde destinos.html) -->
+    <div id="destinos-container"></div>
+    <!-- Contenedor para Ruta Gastronómica -->
+    <div id="gastronomica-container"></div>
+    <!-- Contenedor para Sobre nosotros -->
+    <div id="sobrenosotros-container"></div>
+    <!-- Contenedor para Organiza tu viaje -->
+    <div id="organiza-viaje-container"></div>
+    <!-- Contenedor para Contáctanos -->
+    <div id="contactanos-container"></div>
+    <!-- Contenedor para Footer -->
+    <div id="footer-container"></div>
+
+    <script>
+        let currentSlide = 0;
+        const track = document.getElementById('track');
+        const slides = document.querySelectorAll('.carousel-slide');
+        const indicators = document.querySelectorAll('.indicator');
+        const totalSlides = slides.length;
+
+        // Función para actualizar el carrusel
+        function updateCarousel() {
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Actualizar indicadores
+            indicators.forEach((indicator, index) => {
+                if (index === currentSlide) {
+                    indicator.classList.add('active', 'bg-white');
+                    indicator.classList.remove('bg-white/50');
+                } else {
+                    indicator.classList.remove('active', 'bg-white');
+                    indicator.classList.add('bg-white/50');
+                }
+            });
+        }
+
+        // Botón siguiente
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        });
+
+        // Botón anterior
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        });
+
+        // Indicadores clickeables
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                currentSlide = index;
+                updateCarousel();
+            });
+        });
+
+        // Auto-play (opcional - descomenta si lo quieres)
+        // setInterval(() => {
+        //     currentSlide = (currentSlide + 1) % totalSlides;
+        //     updateCarousel();
+        // }, 5000);
+    </script>
+
+    <script>
+        // Cargar sección Destinos desde destinos.html
+        (function() {
+            const container = document.getElementById('destinos-container');
+            if (!container) return;
+
+            fetch('destinos.html')
+                .then(function(r) { return r.text(); })
+                .then(function(html) {
+                    container.innerHTML = html;
+                    initDestinosScrollSpy();
+                })
+                .catch(function(err) {
+                    console.error('Error al cargar destinos.html:', err);
+                    container.innerHTML = '<p class="text-center py-12 text-gray-500 px-4">No se pudo cargar la sección Destinos. Abre la página con un servidor local (ej. <code class="bg-gray-200 px-1 rounded">npx serve</code> o Live Server en la carpeta del proyecto).</p>';
+                });
+
+            function initDestinosScrollSpy() {
+                const section = document.getElementById('destinos');
+                const link = document.getElementById('nav-link-destinos');
+                if (!section || !link) return;
+
+                const observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(e) {
+                        if (e.isIntersecting) link.classList.add('nav-link-active');
+                        else link.classList.remove('nav-link-active');
+                    });
+                }, { rootMargin: '0px 0px -40% 0px', threshold: 0 });
+
+                observer.observe(section);
+            }
+        })();
+    </script>
+
+
+<script>
+  // Cargar sección Ruta Gastronómica desde gastronomica.html
+  (function () {
+    const container = document.getElementById('gastronomica-container');
+    if (!container) return;
+
+    fetch('gastronomica.html')
+      .then(r => r.text())
+      .then(html => {
+        container.innerHTML = html;
+      })
+      .catch(err => {
+        console.error('Error al cargar gastronomica.html:', err);
+        container.innerHTML = `
+          <p class="text-center py-12 text-gray-500 px-4">
+            No se pudo cargar la Ruta Gastronómica.
+            Usa un servidor local (Live Server o 
+            <code class="bg-gray-200 px-1 rounded">npx serve</code>).
+          </p>
+        `;
+      });
+  })();
+</script>
+
+<script>
+  // Cargar sección Sobre nosotros desde sobrenosotros.html
+  (function () {
+    const container = document.getElementById('sobrenosotros-container');
+    if (!container) return;
+
+    fetch('sobrenosotros.html')
+      .then(r => r.text())
+      .then(html => {
+        container.innerHTML = html;
+        initSobreNosotrosScrollSpy();
+      })
+      .catch(err => {
+        console.error('Error al cargar sobrenosotros.html:', err);
+        container.innerHTML = '<p class="text-center py-12 text-gray-500 px-4">No se pudo cargar Sobre nosotros. Usa un servidor local (Live Server o <code class="bg-gray-200 px-1 rounded">npx serve</code>).</p>';
+      });
+
+    function initSobreNosotrosScrollSpy() {
+      const section = document.getElementById('sobre-nosotros');
+      const link = document.getElementById('nav-link-sobre-nosotros');
+      if (!section || !link) return;
+
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) link.classList.add('nav-link-active');
+          else link.classList.remove('nav-link-active');
+        });
+      }, { rootMargin: '0px 0px -40% 0px', threshold: 0 });
+
+      observer.observe(section);
+    }
+  })();
+</script>
+
+<script>
+  // Cargar sección Organiza tu viaje desde organiza-viaje.html
+  (function () {
+    const container = document.getElementById('organiza-viaje-container');
+    if (!container) return;
+
+    fetch('organiza-viaje.html')
+      .then(r => r.text())
+      .then(html => {
+        container.innerHTML = html;
+        initOrganizaViajeScrollSpy();
+      })
+      .catch(err => {
+        console.error('Error al cargar organiza-viaje.html:', err);
+        container.innerHTML = '<p class="text-center py-12 text-gray-500 px-4">No se pudo cargar Organiza tu viaje. Usa un servidor local (Live Server o <code class="bg-gray-200 px-1 rounded">npx serve</code>).</p>';
+      });
+
+    function initOrganizaViajeScrollSpy() {
+      const section = document.getElementById('organiza-viaje');
+      const link = document.getElementById('nav-link-organiza-viaje');
+      if (!section || !link) return;
+
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) link.classList.add('nav-link-active');
+          else link.classList.remove('nav-link-active');
+        });
+      }, { rootMargin: '0px 0px -40% 0px', threshold: 0 });
+
+      observer.observe(section);
+    }
+  })();
+</script>
+
+<script>
+  // Cargar sección Contáctanos desde contactanos.html
+  (function () {
+    const container = document.getElementById('contactanos-container');
+    if (!container) return;
+
+    fetch('contactanos.html')
+      .then(r => r.text())
+      .then(html => {
+        container.innerHTML = html;
+        initContactanosScrollSpy();
+      })
+      .catch(err => {
+        console.error('Error al cargar contactanos.html:', err);
+        container.innerHTML = '<p class="text-center py-12 text-gray-500 px-4">No se pudo cargar Contáctanos. Usa un servidor local (Live Server o <code class="bg-gray-200 px-1 rounded">npx serve</code>).</p>';
+      });
+
+    function initContactanosScrollSpy() {
+      const section = document.getElementById('contactanos');
+      const link = document.getElementById('nav-link-contactanos');
+      if (!section || !link) return;
+
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) link.classList.add('nav-link-active');
+          else link.classList.remove('nav-link-active');
+        });
+      }, { rootMargin: '0px 0px -40% 0px', threshold: 0 });
+
+      observer.observe(section);
+    }
+  })();
+</script>
+
+<script>
+  // Cargar Footer desde footer.html
+  (function () {
+    const container = document.getElementById('footer-container');
+    if (!container) return;
+
+    fetch('footer.html')
+      .then(r => r.text())
+      .then(html => {
+        container.innerHTML = html;
+      })
+      .catch(err => {
+        console.error('Error al cargar footer.html:', err);
+        container.innerHTML = '<p class="text-center py-12 text-gray-500 px-4">No se pudo cargar el footer. Usa un servidor local (Live Server o <code class="bg-gray-200 px-1 rounded">npx serve</code>).</p>';
+      });
+  })();
+</script>
+
+</body>
+</html>
